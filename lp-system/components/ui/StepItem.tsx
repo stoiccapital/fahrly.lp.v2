@@ -38,10 +38,10 @@ export function StepItem({
       <div className={`${typography.label} ${isDark ? colors.dark.accent.primary : themeColors.accent.primary} ${spacing.block.y.sm}`}>
         {stepLabel}
       </div>
-      <h3 className={`${typography.h3} ${isDark ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+      <h3 className={`${typography.h3} text-text-primary ${spacing.block.y.md}`}>
         {title}
       </h3>
-      <p className={`${typography.body} ${isDark ? colors.dark.text.secondary : themeColors.text.secondary} ${maxTextWidth} ${spacing.block.y.md}`}>
+      <p className={`${typography.body} text-text-secondary ${maxTextWidth} ${spacing.block.y.md}`}>
         {body}
       </p>
       {ctaLabel && (

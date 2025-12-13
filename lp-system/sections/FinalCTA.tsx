@@ -18,16 +18,14 @@ export type FinalCTAProps = {
  * Internal: H2 → subtitle block.y.md, Subtitle → CTAGroup block.y.lg
  */
 export function FinalCTA({ copy, theme }: FinalCTAProps) {
-  const themeColors = colors[theme];
-
   return (
     <section id="final-cta" data-section-id="final-cta" className={`${spacing.section.top['2xl']} ${spacing.section.bottom.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout align="center">
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
         {copy.subtitle && (
-          <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.lg}`}>
+          <p className={`${typography.body} text-text-secondary ${spacing.block.y.lg}`}>
             {copy.subtitle}
           </p>
         )}

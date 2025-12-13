@@ -20,18 +20,16 @@ export type HeroProps = {
  * Internal spacing: H1 → subtitle block.y.md, Subtitle → CTAGroup block.y.md
  */
 export function Hero({ copy, theme }: HeroProps) {
-  const themeColors = colors[theme];
-  
   return (
     <section id="hero" data-section-id="hero" className={`${spacing.section.y['2xl']} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout>
         <SplitGrid>
           <div className="text-left">
-            <h1 className={`${typography.h1} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+            <h1 className={`${typography.h1} text-text-primary ${spacing.block.y.md}`}>
               {copy.title}
             </h1>
             {copy.subtitle && (
-              <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${maxTextWidth} ${spacing.block.y.md}`}>
+              <p className={`${typography.body} text-text-secondary ${maxTextWidth} ${spacing.block.y.md}`}>
                 {copy.subtitle}
               </p>
             )}

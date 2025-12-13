@@ -43,28 +43,15 @@ export function TestimonialCard({
         ${className}
       `}
     >
-      <p className={`
-        ${typography.body}
-        ${isDark ? colors.dark.text.secondary : themeColors.text.secondary}
-        italic
-        ${spacing.block.y.md}
-      `}>
+      <p className={`${typography.body} text-text-secondary italic ${spacing.block.y.md}`}>
         "{quote}"
       </p>
       
-      <div className={`
-        ${typography.h3}
-        ${isDark ? colors.dark.text.primary : themeColors.text.primary}
-        ${spacing.block.y.sm}
-      `}>
+      <div className={`${typography.h3} text-text-primary ${spacing.block.y.sm}`}>
         {name}
       </div>
       
-      <div className={`
-        ${typography.label}
-        ${isDark ? colors.dark.text.muted : themeColors.text.muted}
-        ${spacing.block.y.sm}
-      `}>
+      <div className={`${typography.label} text-text-muted ${spacing.block.y.sm}`}>
         {role}
       </div>
       

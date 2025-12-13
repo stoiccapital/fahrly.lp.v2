@@ -22,10 +22,10 @@ export function Metrics({ copy, theme }: MetricsProps) {
       <div className={`${typography.h1} ${theme === 'dark' ? colors.dark.accent.primary : themeColors.accent.primary}`}>
         {metric.value}
       </div>
-      <h3 className={`${typography.h3} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary}`}>
+      <h3 className={`${typography.h3} text-text-primary`}>
         {metric.label}
       </h3>
-      <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary}`}>
+      <p className={`${typography.body} text-text-secondary`}>
         {metric.description}
       </p>
     </div>
@@ -34,10 +34,10 @@ export function Metrics({ copy, theme }: MetricsProps) {
   return (
     <section id="metrics" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout>
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
-        <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+        <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
           {copy.subtitle}
         </p>
         <div className={`grid grid-cols-1 md:grid-cols-${copy.metrics.length === 4 ? '4' : '3'} ${spacing.grid.x.md} ${spacing.grid.y.md}`}>

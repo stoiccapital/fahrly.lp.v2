@@ -18,7 +18,6 @@ export type TestimonialsProps = {
  * Grid: 1 column mobile, 2–3 desktop, gaps via grid tokens
  */
 export function Testimonials({ copy, theme }: TestimonialsProps) {
-  const themeColors = colors[theme];
   const testimonials = copy.testimonials && copy.testimonials.length > 0 
     ? copy.testimonials 
     : [
@@ -41,11 +40,11 @@ export function Testimonials({ copy, theme }: TestimonialsProps) {
   return (
     <section id="testimonials" data-section-id="testimonials" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout>
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
         {copy.subtitle && (
-          <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+          <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
             {copy.subtitle}
           </p>
         )}

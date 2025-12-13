@@ -48,37 +48,19 @@ export function PricingCard({
         ${className}
       `}
     >
-      <h3 className={`
-        ${typography.h3}
-        ${isDark ? colors.dark.text.primary : themeColors.text.primary}
-        ${spacing.block.y.sm}
-      `}>
+      <h3 className={`${typography.h3} text-text-primary ${spacing.block.y.sm}`}>
         {title}
       </h3>
       
-      <div className={`
-        ${typography.h2}
-        ${isDark ? colors.dark.text.primary : themeColors.text.primary}
-        ${spacing.block.y.md}
-      `}>
+      <div className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
         {price}
       </div>
       
-      <p className={`
-        ${typography.body}
-        ${typography.textXs}
-        ${isDark ? colors.dark.text.muted : themeColors.text.muted}
-        ${spacing.block.y.md}
-      `}>
+      <p className={`${typography.body} ${typography.textXs} text-text-muted ${spacing.block.y.md}`}>
         {body}
       </p>
       
-      <ul className={`
-        flex flex-col
-        ${spacing.block.y.md}
-        flex-grow
-        ${isDark ? colors.dark.text.secondary : themeColors.text.secondary}
-      `}>
+      <ul className={`flex flex-col ${spacing.block.y.md} flex-grow text-text-secondary`}>
         {features.map((feature, index) => (
           <li key={index} className={`flex items-start ${index > 0 ? spacing.element.y.xs : ''}`}>
             <span className="mr-2">✓</span>

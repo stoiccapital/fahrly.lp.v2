@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, spacing, layout, footer, typography, ColorTheme } from '../config/design-system';
+import { spacing, layout, footer, typography } from '../config/design-system';
 
 export type FooterLabels = {
   copyright: string;
@@ -11,30 +11,26 @@ export type FooterLabels = {
 };
 
 export type FooterProps = {
-  theme: ColorTheme;
+  theme: 'light' | 'dark'; // Keep for API compatibility, but not used internally
   labels: FooterLabels;
 };
 
-export function Footer({ theme, labels }: FooterProps) {
-  const bgColor = theme === 'light' ? footer.bg.light : footer.bg.dark;
-  const borderColor = theme === 'light' ? footer.borderColor.light : footer.borderColor.dark;
-  const textMuted = theme === 'light' ? footer.text.muted.light : footer.text.muted.dark;
-
+export function Footer({ labels }: FooterProps) {
   return (
-    <footer aria-label="Footer" className={`${bgColor} border-t ${borderColor} ${footer.section.padding.y}`}>
+    <footer aria-label="Footer" className={`${footer.bg} border-t ${footer.borderColor} ${footer.section.padding.y}`}>
       <div className={`${layout.container.maxWidth} ${layout.container.px} mx-auto`}>
         <div className={`flex flex-col md:flex-row justify-between items-center ${spacing.gap.sm}`}>
-          <div className={`${typography.textXs} ${textMuted}`}>
+          <div className={`${typography.textXs} ${footer.text.muted}`}>
             {labels.copyright}
           </div>
           <nav aria-label="Footer navigation" className={`flex items-center ${spacing.gap.md}`}>
-            <a href="#" className={`${typography.textXs} ${textMuted} hover:opacity-70`}>
+            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:opacity-70`}>
               {labels.links.privacy}
             </a>
-            <a href="#" className={`${typography.textXs} ${textMuted} hover:opacity-70`}>
+            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:opacity-70`}>
               {labels.links.terms}
             </a>
-            <a href="#" className={`${typography.textXs} ${textMuted} hover:opacity-70`}>
+            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:opacity-70`}>
               {labels.links.contact}
             </a>
           </nav>

@@ -18,8 +18,6 @@ export type PricingProps = {
  * Grid: 1 col mobile, 2–3 desktop, gaps via grid tokens
  */
 export function Pricing({ copy, theme }: PricingProps) {
-  const themeColors = colors[theme];
-
   const plans = copy.plans && copy.plans.length > 0 ? copy.plans : [
     { name: 'Starter', price: '$29', description: 'Perfect for small teams', features: ['Basic features'], ctaLabel: 'Get Started' },
     { name: 'Professional', price: '$99', description: 'For growing businesses', features: ['Advanced features'], ctaLabel: 'Get Started' },
@@ -40,10 +38,10 @@ export function Pricing({ copy, theme }: PricingProps) {
   return (
     <section id="pricing" data-section-id="pricing" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout align="center">
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
-        <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+        <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
           {copy.subtitle}
         </p>
         <div className={`grid grid-cols-1 md:grid-cols-${plans.length === 2 ? '2' : '3'} ${spacing.grid.x.md} ${spacing.grid.y.md}`}>

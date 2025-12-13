@@ -1,5 +1,62 @@
 @import "tailwindcss";
 
+/* Light theme (default) - :root has lower specificity */
+:root {
+  --bg-default: white;
+  --bg-neutral: rgb(248 250 252); /* slate-50 */
+  --text-primary: rgb(15 23 42); /* slate-900 */
+  --text-secondary: rgb(71 85 105); /* slate-600 */
+  --text-muted: rgb(100 116 139); /* slate-500 */
+  --border-subtle: rgb(226 232 240); /* slate-200 */
+  --ring-color: rgba(255, 255, 255, 0.5); /* white/50 for focus rings */
+  --ring-offset: rgb(2 6 23); /* slate-950 for ring offset */
+}
+
+/* Dark theme - html.dark has higher specificity and overrides :root */
+html.dark {
+  --bg-default: rgb(2 6 23); /* slate-950 */
+  --bg-neutral: rgb(2 6 23); /* slate-950 */
+  --text-primary: rgb(248 250 252); /* slate-50 */
+  --text-secondary: rgb(226 232 240); /* slate-200 */
+  --text-muted: rgb(148 163 184); /* slate-400 */
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --ring-color: rgba(255, 255, 255, 0.5); /* white/50 for focus rings */
+  --ring-offset: rgb(248 250 252); /* slate-50 for ring offset in dark mode */
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Ensure body uses semantic background and text color */
+body {
+  background-color: var(--bg-default);
+  color: var(--text-primary);
+}
+
+/* Semantic utility mappings - guarantee classes produce real colors */
+@layer utilities {
+  .bg-bg-default {
+    background-color: var(--bg-default);
+  }
+  
+  .bg-bg-neutral {
+    background-color: var(--bg-neutral);
+  }
+  
+  .text-text-primary {
+    color: var(--text-primary);
+  }
+  
+  .text-text-secondary {
+    color: var(--text-secondary);
+  }
+  
+  .text-text-muted {
+    color: var(--text-muted);
+  }
+  
+  .border-border-subtle {
+    border-color: var(--border-subtle);
+  }
 }

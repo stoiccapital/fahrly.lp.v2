@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { findLandingPageConfig } from '@/lp-system/config/lp-config';
 import { loadPageCopy } from '@/lp-system/locales';
 import { LandingPageTemplate } from '@/lp-system/templates/LandingPage';
@@ -12,8 +13,28 @@ type PageProps = {
   }>;
 };
 
-// Base URL - should be set via environment variable in production
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com';
+// Get base URL from environment variable or runtime headers
+async function getBaseUrl(): Promise<string> {
+  // Prefer environment variable if set
+  if (process.env.NEXT_PUBLIC_BASE_URL) {
+    return process.env.NEXT_PUBLIC_BASE_URL;
+  }
+  
+  // Fallback to runtime detection
+  try {
+    const headersList = await headers();
+    const host = headersList.get('host');
+    const protocol = headersList.get('x-forwarded-proto') || 'http';
+    if (host) {
+      return `${protocol}://${host}`;
+    }
+  } catch {
+    // Headers not available (e.g., during build)
+  }
+  
+  // Final fallback (should not be used in production)
+  return '';
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, vertical, slug } = await params;
@@ -36,14 +57,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   // Build canonical URL
-  const canonicalUrl = `${BASE_URL}/${locale}/${vertical}/${slug}`;
+  const baseUrl = await getBaseUrl();
+  const canonicalUrl = baseUrl ? `${baseUrl}/${locale}/${vertical}/${slug}` : undefined;
 
   return {
     title: copy.hero.title,
     description: copy.hero.subtitle,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    ...(canonicalUrl && {
+      alternates: {
+        canonical: canonicalUrl,
+      },
+    }),
   };
 }
 
@@ -68,7 +92,8 @@ export default async function LandingPage({ params }: PageProps) {
   }
 
   // Build canonical URL for structured data
-  const canonicalUrl = `${BASE_URL}/${locale}/${vertical}/${slug}`;
+  const baseUrl = await getBaseUrl();
+  const canonicalUrl = baseUrl ? `${baseUrl}/${locale}/${vertical}/${slug}` : undefined;
 
   // Structured data (JSON-LD)
   const structuredData = {
@@ -76,11 +101,11 @@ export default async function LandingPage({ params }: PageProps) {
     '@type': 'WebPage',
     name: copy.hero.title,
     description: copy.hero.subtitle,
-    url: canonicalUrl,
+    ...(canonicalUrl && { url: canonicalUrl }),
     mainEntity: {
       '@type': 'Organization',
       name: 'Company Name',
-      url: BASE_URL,
+      ...(baseUrl && { url: baseUrl }),
     },
   };
 

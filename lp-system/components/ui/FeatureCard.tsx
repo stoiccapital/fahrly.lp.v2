@@ -35,18 +35,11 @@ export function FeatureCard({ icon, title, body, theme, className = '' }: Featur
         </div>
       )}
       
-      <h3 className={`
-        ${typography.h3}
-        ${isDark ? colors.dark.text.primary : themeColors.text.primary}
-        ${spacing.block.y.md}
-      `}>
+      <h3 className={`${typography.h3} text-text-primary ${spacing.block.y.md}`}>
         {title}
       </h3>
       
-      <p className={`
-        ${typography.body}
-        ${isDark ? colors.dark.text.secondary : themeColors.text.secondary}
-      `}>
+      <p className={`${typography.body} text-text-secondary`}>
         {body}
       </p>
     </div>

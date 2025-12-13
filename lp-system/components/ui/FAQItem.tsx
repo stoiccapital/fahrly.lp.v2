@@ -25,11 +25,11 @@ export function FAQItem({ theme, question, answer, index }: FAQItemProps) {
         aria-expanded="false"
         aria-controls={`faq-answer-${index}`}
       >
-        <h3 className={`${typography.h3} ${isDark ? colors.dark.text.primary : themeColors.text.primary}`}>
+        <h3 className={`${typography.h3} text-text-primary`}>
           {question}
         </h3>
         <svg
-          className={`w-5 h-5 shrink-0 ${components.transition.default} [details[open]_&]:rotate-90 ${isDark ? colors.dark.text.primary : themeColors.text.primary}`}
+          className={`w-5 h-5 shrink-0 ${components.transition.default} [details[open]_&]:rotate-90 text-text-primary`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -49,11 +49,11 @@ export function FAQItem({ theme, question, answer, index }: FAQItemProps) {
         role="region"
         aria-hidden="true"
       >
-        <p className={`${typography.body} ${isDark ? colors.dark.text.secondary : themeColors.text.secondary}`}>
+        <p className={`${typography.body} text-text-secondary`}>
           {answer}
         </p>
       </div>
-      <div className={`w-full border-t ${spacing.block.y.sm} ${isDark ? colors.dark.divider.subtle : themeColors.divider.subtle}`} />
+      <div className={`w-full border-t ${spacing.block.y.sm} border-border-subtle`} />
     </details>
   );
 }

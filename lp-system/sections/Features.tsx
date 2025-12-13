@@ -19,8 +19,6 @@ export type FeaturesProps = {
  * Text blocks LEFT aligned
  */
 export function Features({ copy, theme }: FeaturesProps) {
-  const themeColors = colors[theme];
-
   const features = [
     {
       title: "Advanced Analytics",
@@ -40,12 +38,12 @@ export function Features({ copy, theme }: FeaturesProps) {
     <section id="features" data-section-id="features" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <SingleColumn>
         <div className={spacing.block.y.md}>
-          <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary}`}>
+          <h2 className={`${typography.h2} text-text-primary`}>
             Powerful features
           </h2>
         </div>
         <div className={spacing.block.y.md}>
-          <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary}`}>
+          <p className={`${typography.body} text-text-secondary`}>
             Everything you need to succeed
           </p>
         </div>
@@ -54,11 +52,11 @@ export function Features({ copy, theme }: FeaturesProps) {
             <SplitGrid>
               <div className="text-left">
                 <div className={spacing.block.y.md}>
-                  <h3 className={`${typography.h3} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary}`}>
+                  <h3 className={`${typography.h3} text-text-primary`}>
                     {item.title}
                   </h3>
                 </div>
-                <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${maxTextWidth}`}>
+                <p className={`${typography.body} text-text-secondary ${maxTextWidth}`}>
                   {item.body}
                 </p>
               </div>

@@ -17,7 +17,6 @@ export type UseCasesProps = {
  * Cards: left-aligned content, gaps via grid tokens
  */
 export function UseCases({ copy, theme }: UseCasesProps) {
-  const themeColors = colors[theme];
   const items = copy.items && copy.items.length > 0 ? copy.items : [
     { title: 'Use Case 1', body: 'Perfect for your workflow' },
     { title: 'Use Case 2', body: 'Built for your needs' },
@@ -37,10 +36,10 @@ export function UseCases({ copy, theme }: UseCasesProps) {
   return (
     <section id="use-cases" data-section-id="use-cases" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout>
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
-        <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+        <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
           {copy.subtitle}
         </p>
         <div className={`grid grid-cols-1 md:grid-cols-3 ${spacing.grid.x.md} ${spacing.grid.y.md}`}>

@@ -22,10 +22,10 @@ export function Security({ copy, theme }: SecurityProps) {
       <div className={`w-12 h-12 ${theme === 'dark' ? colors.dark.surface.elevated : themeColors.surface.default} ${components.surface.radius} flex items-center justify-center ${spacing.block.y.sm}`}>
         <div className={`${typography.textXs} ${theme === 'dark' ? colors.dark.accent.primary : themeColors.accent.primary}`}>Icon</div>
       </div>
-      <h3 className={`${typography.h3} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary}`}>
+      <h3 className={`${typography.h3} text-text-primary`}>
         {item.title}
       </h3>
-      <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary}`}>
+      <p className={`${typography.body} text-text-secondary`}>
         {item.body}
       </p>
     </div>
@@ -34,10 +34,10 @@ export function Security({ copy, theme }: SecurityProps) {
   return (
     <section id="security" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout>
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
-        <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+        <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
           {copy.subtitle}
         </p>
         <div className={`grid grid-cols-1 md:grid-cols-3 ${spacing.grid.x.md} ${spacing.grid.y.md}`}>

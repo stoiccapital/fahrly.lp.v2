@@ -115,29 +115,29 @@ export type ColorTheme = 'light' | 'dark';
 
 export const colors = {
   light: {
-    // Background tokens
+    // Background tokens - use semantic var-backed classes
     background: {
-      default: 'bg-white',
-      neutral: 'bg-slate-50',
+      default: 'bg-bg-default',
+      neutral: 'bg-bg-neutral',
     },
-    // Surface tokens
+    // Surface tokens - use semantic var-backed classes
     surface: {
-      default: 'bg-white',
-      elevated: 'bg-white',
+      default: 'bg-bg-default',
+      elevated: 'bg-bg-default',
     },
-    // Text tokens
+    // Text tokens - use semantic var-backed classes
     text: {
-      primary: 'text-slate-900',
-      secondary: 'text-slate-600',
-      muted: 'text-slate-600',
+      primary: 'text-text-primary',
+      secondary: 'text-text-secondary',
+      muted: 'text-text-muted',
     },
-    // Neutral palette
+    // Neutral palette - use semantic var-backed classes
     neutral: {
-      darkest: 'bg-slate-950',
-      surface: 'bg-white',
-      lightest: 'text-slate-900',
-      light: 'text-slate-600',
-      midLight: 'text-slate-500',
+      darkest: 'bg-bg-default',
+      surface: 'bg-bg-default',
+      lightest: 'text-text-primary',
+      light: 'text-text-secondary',
+      midLight: 'text-text-muted',
     },
     // Primary (CTA only)
     primary: {
@@ -149,66 +149,66 @@ export const colors = {
     accent: {
       primary: 'text-blue-600',
     },
-    // Borders
+    // Borders - use semantic var-backed classes
     border: {
-      subtle: 'border-slate-200',
+      subtle: 'border-border-subtle',
     },
     divider: {
-      subtle: 'border-slate-200',
+      subtle: 'border-border-subtle',
     },
-    // Card backgrounds
+    // Card backgrounds - use semantic var-backed classes
     card: {
-      bg: 'bg-white',
-      border: 'border-slate-200',
+      bg: 'bg-bg-default',
+      border: 'border-border-subtle',
     },
   },
   dark: {
-    // Background tokens (dark mode)
+    // Background tokens (dark mode) - use semantic var-backed classes
     background: {
-      darkest: 'bg-slate-950',  // Page background
-      darker: 'bg-slate-900',    // Section variants, cards
-      dark: 'bg-slate-800',      // Section variants, icon containers
-      default: 'bg-slate-950',
-      neutral: 'bg-slate-950',
+      darkest: 'bg-bg-default',  // Page background
+      darker: 'bg-bg-default',    // Section variants, cards
+      dark: 'bg-bg-neutral',      // Section variants, icon containers
+      default: 'bg-bg-default',
+      neutral: 'bg-bg-neutral',
     },
-    // Surface tokens (dark mode)
+    // Surface tokens (dark mode) - use semantic var-backed classes
     surface: {
-      default: 'bg-slate-900',
-      elevated: 'bg-slate-800',
+      default: 'bg-bg-default',
+      elevated: 'bg-bg-neutral',
     },
-    // Text tokens (dark mode)
+    // Text tokens (dark mode) - use semantic var-backed classes
     text: {
-      primary: 'text-slate-50',   // Headlines
-      secondary: 'text-slate-200', // Body text
-      muted: 'text-slate-400',    // Muted text
+      primary: 'text-text-primary',   // Headlines
+      secondary: 'text-text-secondary', // Body text
+      muted: 'text-text-muted',    // Muted text
     },
-    // Text tokens (dark mode) - legacy
+    // Text tokens (dark mode) - legacy - use semantic var-backed classes
     neutral: {
-      lightest: 'text-slate-50',   // Headlines (very bright)
-      light: 'text-slate-200',     // Body text
-      midLight: 'text-slate-400',  // Muted text
-      dark: 'text-slate-50',       // Alias for lightest (headlines)
-      medium: 'text-slate-200',    // Body text (use light for body)
+      lightest: 'text-text-primary',   // Headlines (very bright)
+      light: 'text-text-secondary',     // Body text
+      midLight: 'text-text-muted',  // Muted text
+      dark: 'text-text-primary',       // Alias for lightest (headlines)
+      medium: 'text-text-secondary',    // Body text (use light for body)
     },
-    // Background classes for containers (icon boxes, etc.)
+    // Background classes for containers (icon boxes, etc.) - use semantic var-backed classes
     bg: {
-      icon: 'bg-slate-800',        // Icon container backgrounds
-      card: 'bg-slate-900',        // Card backgrounds
+      icon: 'bg-bg-neutral',        // Icon container backgrounds
+      card: 'bg-bg-default',        // Card backgrounds
     },
-    // White CTA button tokens
+    // CTA button tokens - use semantic tokens for default surfaces
     cta: {
       white: {
-        bg: 'bg-white',
-        text: 'text-slate-950',
-        hover: 'hover:bg-neutral-100',
-        active: 'active:bg-neutral-200',
+        bg: 'bg-bg-default',
+        text: 'text-text-primary',
+        hover: 'hover:bg-bg-neutral',
+        active: 'active:bg-bg-neutral',
       },
       ghost: {
         bg: 'bg-transparent',
-        border: 'border-white',
-        text: 'text-slate-50',
-        hover: 'hover:bg-white/10',
-        active: 'active:bg-white/20',
+        border: 'border-border-subtle',
+        text: 'text-text-primary',
+        hover: 'hover:bg-bg-neutral',
+        active: 'active:bg-bg-neutral',
       },
     },
     // Electric blue accent (for icons, highlights, underlines, metrics)
@@ -221,17 +221,17 @@ export const colors = {
         subtle: 'text-sky-500',       // Subtle variant
       },
     },
-    // Borders (subtle neutral-dark-light)
+    // Borders (subtle neutral-dark-light) - use semantic var-backed classes
     border: {
-      subtle: 'border-white/10',
+      subtle: 'border-border-subtle',
     },
     divider: {
-      subtle: 'border-white/5',
+      subtle: 'border-border-subtle',
     },
-    // Card backgrounds
+    // Card backgrounds - use semantic var-backed classes
     card: {
-      bg: 'bg-slate-900',
-      border: 'border-white/10',
+      bg: 'bg-bg-default',
+      border: 'border-border-subtle',
     },
   },
 } as const;
@@ -281,12 +281,12 @@ export const components = {
   button: {
     // White, slim CTA buttons
     primary: {
-      base: 'px-5 py-2 rounded-full font-medium transition-all duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-slate-950',
+      base: 'px-5 py-2 rounded-full font-medium transition-all duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-ring-focus focus:ring-offset-2 focus:ring-offset-ring-focus',
       // Slim vertical padding (py-2), horizontal padding (px-5)
       // Rounded-full for pill shape
     },
     secondary: {
-      base: 'px-5 py-2 rounded-full font-medium transition-all duration-150 ease-out border focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-slate-950',
+      base: 'px-5 py-2 rounded-full font-medium transition-all duration-150 ease-out border focus:outline-none focus:ring-2 focus:ring-ring-focus focus:ring-offset-2 focus:ring-offset-ring-focus',
       // Ghost variant with border
     },
     radius: 'rounded-full', // Pill-shaped radius token
@@ -376,14 +376,9 @@ export const layout = {
 
 export const navbar = {
   height: 'py-4',
-  borderColor: {
-    light: colors.light.divider.subtle,
-    dark: colors.dark.divider.subtle,
-  },
-  bg: {
-    light: colors.light.neutral.surface,
-    dark: colors.dark.background.darkest,
-  },
+  // Use semantic classes backed by CSS variables (no theme branching needed)
+  bg: 'bg-bg-default',
+  borderColor: 'border-border-subtle',
   link: {
     spacing: {
       x: spacing.gap.md,
@@ -397,28 +392,17 @@ export const navbar = {
 // ============================================================================
 
 export const footer = {
-  bg: {
-    light: colors.light.neutral.surface,
-    dark: colors.dark.background.darkest,
-  },
-  borderColor: {
-    light: colors.light.divider.subtle,
-    dark: colors.dark.divider.subtle,
-  },
+  // Use semantic classes backed by CSS variables (no theme branching needed)
+  bg: 'bg-bg-default',
+  borderColor: 'border-border-subtle',
   section: {
     padding: {
       y: spacing.section.y.lg,
     },
   },
   text: {
-    muted: {
-      light: colors.light.neutral.midLight,
-      dark: colors.dark.neutral.midLight,
-    },
-    default: {
-      light: colors.light.neutral.light,
-      dark: colors.dark.neutral.light,
-    },
+    muted: 'text-text-muted',
+    default: 'text-text-secondary',
   },
 } as const;
 
@@ -427,13 +411,13 @@ export const footer = {
 // ============================================================================
 
 /**
- * Global Background Rule: Every section MUST use neutral.darkest
+ * Global Background Rule: Every section MUST use bg-bg-default
  * NO alternating backgrounds, NO variants, NO gradients
- * Single uniform dark canvas across entire landing page
+ * Single uniform background across entire landing page
  */
 export const globalBackground = {
   neutral: {
-    darkest: 'bg-slate-950', // Single token for ALL sections and footer
+    darkest: 'bg-bg-default', // Use semantic token backed by CSS variable
   },
 } as const;
 

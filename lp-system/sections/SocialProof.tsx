@@ -17,12 +17,11 @@ export type SocialProofProps = {
  * Internal: H2 → subtitle block.y.md, Subtitle → LogoGrid block.y.lg
  */
 export function SocialProof({ copy, theme }: SocialProofProps) {
-  const themeColors = colors[theme];
   const logos = Array.from({ length: 8 }, (_, i) => ({ src: undefined, alt: `Logo ${i + 1}` }));
 
   const heading = copy.label ? (
     <div className={spacing.block.y.md}>
-      <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary}`}>
+      <h2 className={`${typography.h2} text-text-primary`}>
         {copy.label}
       </h2>
     </div>

@@ -53,7 +53,7 @@ export function LogoCell({ src, alt, theme, className = '', wrapperClassName = '
         <div className={`
           ${spacing.logo.height.md}
           w-auto
-          ${isDark ? colors.dark.text.muted : themeColors.text.muted}
+          text-text-muted
           text-xs
           ${opacityClass}
           ${className}

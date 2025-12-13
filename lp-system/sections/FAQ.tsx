@@ -17,16 +17,14 @@ export type FAQProps = {
  * Internal: H2 → subtitle block.y.md, Subtitle → FAQ list block.y.md
  */
 export function FAQ({ theme, content }: FAQProps) {
-  const themeColors = colors[theme];
-
   return (
     <section id="faq" data-section-id="faq" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <SingleColumn>
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {content.heading}
         </h2>
         {content.subtitle && (
-          <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+          <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
             {content.subtitle}
           </p>
         )}

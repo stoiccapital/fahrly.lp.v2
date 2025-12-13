@@ -11,12 +11,12 @@ export type ThemeConfig = {
 export const themes: Record<ThemeName, ThemeConfig> = {
   light: {
     name: 'light',
-    background: colors.light.neutral.surface,
+    background: 'bg-bg-default', // Use semantic class backed by CSS variable
     font: 'font-sans',
   },
   dark: {
     name: 'dark',
-    background: colors.dark.background.darkest, // Use darkest for page background
+    background: 'bg-bg-default', // Use semantic class backed by CSS variable
     font: 'font-sans',
   },
 };

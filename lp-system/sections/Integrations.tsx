@@ -14,16 +14,16 @@ export type IntegrationsProps = {
  * Left aligned, grid-based, tokens only
  */
 export function Integrations({ copy, theme }: IntegrationsProps) {
-  const themeColors = colors[theme];
-  const logoBg = theme === 'light' ? 'bg-neutral-200' : colors.dark.background.dark;
+  // Use semantic token for logo background in both themes
+  const logoBg = 'bg-bg-neutral';
 
   return (
     <section id="integrations" className={`${spacing.section.y.xl} ${globalBackground.neutral.darkest}`}>
       <CenteredLayout>
-        <h2 className={`${typography.h2} ${theme === 'dark' ? colors.dark.text.primary : themeColors.text.primary} ${spacing.block.y.md}`}>
+        <h2 className={`${typography.h2} text-text-primary ${spacing.block.y.md}`}>
           {copy.heading}
         </h2>
-        <p className={`${typography.body} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary} ${spacing.block.y.md}`}>
+        <p className={`${typography.body} text-text-secondary ${spacing.block.y.md}`}>
           {copy.subtitle}
         </p>
         <div className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 ${spacing.grid.x.md} ${spacing.grid.y.md}`}>
@@ -32,7 +32,7 @@ export function Integrations({ copy, theme }: IntegrationsProps) {
               key={index}
               className={`${logoBg} ${components.surface.radius} h-16 flex items-center justify-center`}
             >
-              <div className={`${typography.textXs} ${theme === 'dark' ? colors.dark.text.secondary : themeColors.text.secondary}`}>
+              <div className={`${typography.textXs} text-text-secondary`}>
                 {integration.name}
               </div>
             </div>

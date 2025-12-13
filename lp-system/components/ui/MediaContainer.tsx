@@ -34,7 +34,7 @@ export function MediaContainer({
     ? `border ${colors.dark.border.subtle}`
     : `border ${themeColors.border.subtle}`;
   
-  const textColor = isDark ? colors.dark.text.muted : themeColors.text.muted;
+  const textColor = 'text-text-muted';
   const mediaOverlay = isDark ? components.media.overlay : '';
   const aspectRatioClass = components.media.aspectRatios[aspectRatio];
   
