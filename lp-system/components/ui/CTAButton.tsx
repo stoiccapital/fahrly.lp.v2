@@ -38,10 +38,11 @@ export function CTAButton({
     // Hover and active states use token-based classes that adapt automatically
     variantClasses = `${colors.light.primary.bg} ${colors.light.primary.text} ${colors.light.primary.hover} ${colors.light.primary.active}`;
   } else {
-    // Ghost variant: semantic tokens in both modes (no theme branching)
+    // Ghost/secondary variant: white base, semantic tokens in both modes (no theme branching)
+    // Base: white (bg-bg-default in light mode)
     // Enhanced hover: background + border color change for better visibility
     // Active state slightly stronger than hover
-    variantClasses = `bg-transparent border border-border-subtle text-text-primary hover:bg-bg-neutral-hover hover:border-border-strong active:bg-bg-neutral-active active:border-border-strong`;
+    variantClasses = `bg-bg-default border border-border-subtle text-text-primary hover:bg-bg-neutral-hover hover:border-border-strong active:bg-bg-neutral-active active:border-border-strong`;
   }
 
   return (

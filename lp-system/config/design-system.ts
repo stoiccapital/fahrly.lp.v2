@@ -143,7 +143,7 @@ export const colors = {
     primary: {
       bg: 'bg-cta-bg',
       text: 'text-cta-text',
-      hover: 'hover:bg-cta-hover',
+      hover: 'hover:bg-cta-hover hover:shadow-cta-hover',
       active: 'active:bg-cta-active',
     },
     // Accent
@@ -285,9 +285,10 @@ export const components = {
       base: 'px-5 py-2 rounded-full font-medium transition-all duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-ring-focus focus:ring-offset-2 focus:ring-offset-ring-focus',
       // Slim vertical padding (py-2), horizontal padding (px-5)
       // Rounded-full for pill shape
+      // transition-all includes shadow transitions for hover lift effect
     },
     secondary: {
-      base: 'px-5 py-2 rounded-full font-medium transition-all duration-150 ease-out border focus:outline-none focus:ring-2 focus:ring-ring-focus focus:ring-offset-2 focus:ring-offset-ring-focus',
+      base: 'px-5 py-2 rounded-full font-medium transition-colors duration-150 ease-out border focus:outline-none focus:ring-2 focus:ring-ring-focus focus:ring-offset-2 focus:ring-offset-ring-focus',
       // Ghost variant with border
     },
     radius: 'rounded-full', // Pill-shaped radius token
