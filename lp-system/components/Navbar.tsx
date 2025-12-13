@@ -64,7 +64,7 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
   ];
 
   return (
-    <nav aria-label="Main navigation" className="sticky top-0 z-40 w-full bg-bg-default border-b border-border-subtle">
+    <nav aria-label="Main navigation" className="nav-surface sticky top-0 z-40 w-full border-b">
       <div className={`${layout.container.maxWidth} ${layout.container.px} mx-auto`}>
         <div className={`flex items-center justify-between ${navbar.height}`}>
           {/* Left: Logo */}

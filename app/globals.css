@@ -3,13 +3,13 @@
 /* Light theme (default) - :root has lower specificity */
 :root {
   --bg-default: white;
-  --bg-neutral: rgb(248 250 252); /* slate-50 */
-  --text-primary: rgb(15 23 42); /* slate-900 */
-  --text-secondary: rgb(71 85 105); /* slate-600 */
-  --text-muted: rgb(100 116 139); /* slate-500 */
-  --border-subtle: rgb(226 232 240); /* slate-200 */
-  --ring-color: rgba(255, 255, 255, 0.5); /* white/50 for focus rings */
-  --ring-offset: rgb(2 6 23); /* slate-950 for ring offset */
+  --bg-neutral: rgb(245 247 250); /* Increased contrast for section separation */
+  --text-primary: rgb(18 24 38); /* Crisp, readable primary text */
+  --text-secondary: rgb(55 70 90); /* Clearly distinct secondary text */
+  --text-muted: rgb(85 100 120); /* Readable muted text with clear hierarchy */
+  --border-subtle: rgb(218 225 235); /* Visible borders for cards/dividers */
+  --ring-color: rgb(59 130 246); /* Blue-500 for visible focus rings on light background */
+  --ring-offset: rgb(2 6 23); /* Dark offset for ring contrast */
 }
 
 /* Dark theme - html.dark has higher specificity and overrides :root */
@@ -58,5 +58,11 @@ body {
   
   .border-border-subtle {
     border-color: var(--border-subtle);
+  }
+  
+  /* Navbar opacity guarantee - ensures navbar remains opaque in all states */
+  .nav-surface {
+    background-color: var(--bg-default) !important;
+    border-color: var(--border-subtle) !important;
   }
 }
