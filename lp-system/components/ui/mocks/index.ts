@@ -1,4 +1,10 @@
-export * from './hero/DashboardMock';
+export * from './app/AppFrameMock';
+export * from './features/HRMock';
+export * from './features/FahrlyGoMock';
+export * from './features/FleetManagementMock';
+export * from './features/ComplianceMock';
+export * from './modules/ModulesFrameMock';
+export * from './modules/ModulesConnectionsMock';
 export * from './value-props';
-export * from './browser/BrowserFrameMock';
+export * from './hero/DashboardMock';
 

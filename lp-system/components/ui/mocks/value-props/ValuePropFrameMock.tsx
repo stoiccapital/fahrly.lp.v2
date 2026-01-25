@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserFrameMock } from '../browser/BrowserFrameMock';
+import { AppFrameMock } from '../app/AppFrameMock';
 import { components } from '../../../../config/design-system';
 
 export type ValuePropFrameMockProps = {
@@ -12,20 +12,20 @@ export type ValuePropFrameMockProps = {
 /**
  * Value Prop Frame Mock
  * 
- * Wrapper around BrowserFrameMock that enforces a fixed 16:9 aspect ratio
+ * Wrapper around AppFrameMock that enforces a fixed 16:9 aspect ratio
  * for all ValueProp mock content. Ensures consistent frame height across
  * all variants (bilingual, performance, deployment, timeline).
  * 
  * Uses only design tokens - no arbitrary values.
  * Works in both light and dark modes via semantic tokens.
  * 
- * Accessibility: Entire mock is decorative and marked aria-hidden via BrowserFrameMock.
+ * Accessibility: Entire mock is decorative and marked aria-hidden via AppFrameMock.
  */
 export function ValuePropFrameMock({ url, children }: ValuePropFrameMockProps) {
   return (
-    <BrowserFrameMock url={url}>
+    <AppFrameMock url={url}>
       {/* Fixed aspect ratio container - prevents content from resizing frame */}
-      {/* BrowserFrameMock's inner canvas already has p-6 padding, so this ratio container */}
+      {/* AppFrameMock's inner canvas already has p-6 padding, so this ratio container */}
       {/* will fill the available space within that padding */}
       <div className={`${components.media.aspectRatios['16:9']} relative overflow-hidden`}>
         {/* Content container - absolutely positioned to fill ratio box */}
@@ -34,7 +34,7 @@ export function ValuePropFrameMock({ url, children }: ValuePropFrameMockProps) {
           {children}
         </div>
       </div>
-    </BrowserFrameMock>
+    </AppFrameMock>
   );
 }
 

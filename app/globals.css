@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
-/* Light theme (default) - :root has lower specificity */
+/* ========================================
+
+   Global Background Token (Enforced)
+
+   ======================================== */
+
+/* Light mode (default) */
 :root {
-  --bg-default: white;
+  --bg-default: #ffffff;
   --bg-neutral: rgb(245 247 250); /* Increased contrast for section separation */
   --bg-neutral-hover: rgb(235 239 245); /* Hover state for neutral backgrounds (more visible) */
   --bg-neutral-active: rgb(225 231 239); /* Active state for neutral backgrounds (stronger than hover) */
@@ -13,6 +19,7 @@
   --icon-secondary: rgb(55 70 90); /* Icon secondary color - muted dark in light mode */
   --border-subtle: rgb(218 225 235); /* Visible borders for cards/dividers */
   --border-strong: rgb(175 190 210); /* Stronger borders for hover states */
+  --line-contrast: rgb(0 0 0); /* Connector lines in light mode */
   --ring-color: rgb(59 130 246); /* Blue-500 for visible focus rings on light background */
   --ring-offset: rgb(2 6 23); /* Dark offset for ring contrast */
   /* CTA button tokens - primary button: black background + white text in light mode */
@@ -27,9 +34,9 @@
   --card-hover-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow on hover */
 }
 
-/* Dark theme - html.dark has higher specificity and overrides :root */
-html.dark {
-  --bg-default: #0e0e0e;
+/* Dark mode */
+.dark {
+  --bg-default: #000000;
   --bg-neutral: #0e0e0e;
   --bg-neutral-hover: rgb(15 23 42); /* Hover state for neutral backgrounds (slightly lighter) */
   --bg-neutral-active: rgb(30 41 59); /* Active state for neutral backgrounds (stronger than hover) */
@@ -40,6 +47,7 @@ html.dark {
   --icon-secondary: rgb(226 232 240); /* Icon secondary color - muted light in dark mode */
   --border-subtle: rgba(255, 255, 255, 0.1);
   --border-strong: rgba(255, 255, 255, 0.2); /* Stronger borders for hover states in dark mode */
+  --line-contrast: rgb(255 255 255); /* Connector lines in dark mode */
   --ring-color: rgba(255, 255, 255, 0.5); /* white/50 for focus rings */
   --ring-offset: rgb(248 250 252); /* slate-50 for ring offset in dark mode */
   /* CTA button tokens - primary button: white background + black text in dark mode */
@@ -138,6 +146,10 @@ body {
   
   .border-border-strong {
     border-color: var(--border-strong);
+  }
+
+  .bg-line-contrast {
+    background-color: var(--line-contrast);
   }
   
   /* CTA button semantic utilities - explicit definitions to ensure CSS variable usage */

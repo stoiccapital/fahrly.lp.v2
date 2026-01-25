@@ -1,10 +1,7 @@
 import React from 'react';
 import { ValuePropFrameMock } from './ValuePropFrameMock';
 import { ValuePropMockKind, VALUE_PROP_MOCK_URL } from './types';
-import { BilingualMock } from './variants/BilingualMock';
-import { PerformanceMock } from './variants/PerformanceMock';
-import { DeploymentMock } from './variants/DeploymentMock';
-import { TimelineMock } from './variants/TimelineMock';
+
 
 /**
  * Value Prop Mock Visuals
@@ -20,10 +17,7 @@ import { TimelineMock } from './variants/TimelineMock';
 export function ValuePropMock({ kind }: { kind: ValuePropMockKind }) {
   return (
     <ValuePropFrameMock url={VALUE_PROP_MOCK_URL[kind]}>
-      {kind === 'bilingual' && <BilingualMock />}
-      {kind === 'performance' && <PerformanceMock />}
-      {kind === 'deployment' && <DeploymentMock />}
-      {kind === 'timeline' && <TimelineMock />}
+      <div aria-hidden="true" />
     </ValuePropFrameMock>
   );
 }

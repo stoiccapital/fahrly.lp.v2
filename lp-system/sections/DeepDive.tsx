@@ -3,7 +3,7 @@ import type { SectionDeepDiveCopy } from '../config/types';
 import { SplitGrid } from '../components/layouts/SplitGrid';
 import { SingleColumn } from '../components/layouts/SingleColumn';
 import { StepItem } from '../components/ui/StepItem';
-import { ValuePropMock } from '../components/ui/mocks';
+import { DeepDiveMock } from '../components/ui/mocks/deepdive/DeepdiveMock';
 import { spacing, typography, maxTextWidth, globalBackground, ColorTheme } from '../config/design-system';
 
 export type DeepDiveProps = {
@@ -46,7 +46,7 @@ export function DeepDive({ copy, theme }: DeepDiveProps) {
           </div>
           <div className="flex justify-center lg:justify-end">
             <div className="w-full max-w-xl lg:max-w-2xl">
-              <ValuePropMock kind="timeline" />
+              <DeepDiveMock />
             </div>
           </div>
         </SplitGrid>
