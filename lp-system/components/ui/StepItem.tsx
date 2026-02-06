@@ -46,7 +46,12 @@ export function StepItem({
       </p>
       {ctaLabel && (
         <div className={spacing.block.y.md}>
-          <CTAButton variant="primary" theme={theme} label={ctaLabel} />
+          <CTAButton
+            variant="primary"
+            theme={theme}
+            label={ctaLabel}
+            href="https://qpp.fahrlygo.de/account/get-signup-link"
+          />
         </div>
       )}
       {media && (

@@ -16,6 +16,7 @@ export type PricingCardProps = {
   singleUserLabel?: string;
   singleUserModeLabel?: string;
   ctaLabel: string;
+  ctaHref?: string;
   theme: ColorTheme;
   isHighlighted?: boolean;
   className?: string;
@@ -41,6 +42,7 @@ export function PricingCard(props: PricingCardProps) {
     singleUserMonthly,
     singleUserYearly,
     ctaLabel,
+    ctaHref,
     theme,
     isHighlighted = false,
     className = '',
@@ -115,7 +117,12 @@ export function PricingCard(props: PricingCardProps) {
       </div>
       
       <div className="mt-auto">
-        <CTAButton variant="primary" theme={theme} label={ctaLabel} />
+        <CTAButton
+          variant="primary"
+          theme={theme}
+          label={ctaLabel}
+          href={ctaHref}
+        />
       </div>
     </div>
   );

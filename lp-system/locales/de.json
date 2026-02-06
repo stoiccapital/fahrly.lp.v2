@@ -163,10 +163,9 @@
           },
           "body": "Tägliche Abläufe und Dispatch",
           "features": [
-            "Dispatch & Routing",
-            "Teamkommunikation",
-            "Basis-Reporting",
-            "E-Mail-Support"
+            "Tourenplanung",
+            "Fahrer-Performance-Analysen",
+            "E-Mail-Support innerhalb von 24h"
           ],
           "singleUser": {
             "monthly": "30 € / Monat",
@@ -191,9 +190,9 @@
           "body": "Betrieb & Personalmanagement",
           "features": [
             "Alles aus Core",
-            "Schichtplanung & Verfügbarkeit",
-            "Zeit- & Rollenverwaltung",
-            "Operatives Reporting"
+            "Zeiterfassung",
+            "Lohnrechner",
+            "E-Signatur"
           ],
           "singleUser": {
             "monthly": "60 € / Monat",
@@ -204,30 +203,30 @@
         },
         {
           "id": "full",
-          "title": "Full Platform",
+          "title": "Enterprise",
           "billing": {
             "monthly": {
-              "price": "200 € / Monat",
-              "detail": "Team · monatliche Zahlung"
+              "price": "Preis auf Anfrage",
+              "detail": "Telefontermin erforderlich"
             },
             "yearly": {
-              "price": "160 € / Monat",
-              "subPrice": "(1.920 € / Jahr)",
-              "detail": "Team · jährliche Zahlung"
+              "price": "Preis auf Anfrage",
+              "subPrice": "",
+              "detail": "Telefontermin erforderlich"
             }
           },
           "body": "Vollständiger Betrieb & Compliance",
           "features": [
             "Alles aus Operations",
-            "Fuhrpark-Übersicht",
-            "Compliance-Workflows",
-            "Begleitete Einführung"
+            "Fuhrparkverwaltung",
+            "Compliance",
+            "Führerscheinkontrolle"
           ],
           "singleUser": {
-            "monthly": "120 € / Monat",
-            "yearly": "1.152 € / Jahr"
+            "monthly": "Auf Anfrage",
+            "yearly": "Auf Anfrage"
           },
-          "ctaLabel": "Mit Vertrieb sprechen"
+          "ctaLabel": "Telefontermin buchen"
         }
       ]
     },

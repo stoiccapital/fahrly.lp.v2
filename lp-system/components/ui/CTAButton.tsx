@@ -5,6 +5,7 @@ export type CTAButtonProps = {
   variant: 'primary' | 'ghost';
   theme: ColorTheme;
   label: string;
+  href?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
@@ -20,6 +21,7 @@ export function CTAButton({
   variant,
   theme,
   label,
+  href,
   onClick,
   type = 'button',
   className = '',
@@ -45,12 +47,18 @@ export function CTAButton({
     variantClasses = `bg-bg-default border border-border-subtle text-text-primary hover:bg-bg-neutral-hover hover:border-border-strong active:bg-bg-neutral-active active:border-border-strong`;
   }
 
+  const classes = `${baseClasses} ${variantClasses} cursor-pointer ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} onClick={onClick} className={classes}>
+        {label}
+      </a>
+    );
+  }
+
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      className={`${baseClasses} ${variantClasses} cursor-pointer ${className}`}
-    >
+    <button type={type} onClick={onClick} className={classes}>
       {label}
     </button>
   );

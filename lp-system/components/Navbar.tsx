@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { spacing, layout, navbar, ColorTheme } from '../config/design-system';
 import { CTAButton } from './ui/CTAButton';
 import { LocaleToggle } from './ui/LocaleToggle';
-import { ThemeToggle } from './ui/ThemeToggle';
 
 export type NavbarLabels = {
   brand: string;
@@ -14,6 +13,7 @@ export type NavbarLabels = {
     useCases: string;
     faq: string;
   };
+  login: string;
   cta: string;
   ariaLabels: {
     goToHomepage: string;
@@ -102,8 +102,18 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
             {/* Toggle Cluster (Desktop): LocaleToggle, ThemeToggle, CTA */}
             <div className={`hidden md:flex items-center ${spacing.gap.sm}`}>
               <LocaleToggle />
-              <ThemeToggle />
-              <CTAButton variant="primary" theme={theme} label={labels.cta} />
+              <CTAButton
+                variant="ghost"
+                theme={theme}
+                label={labels.login}
+                href="https://qpp.fahrlygo.de/account/login"
+              />
+              <CTAButton
+                variant="primary"
+                theme={theme}
+                label={labels.cta}
+                href="https://qpp.fahrlygo.de/account/get-signup-link"
+              />
             </div>
 
             {/* Hamburger Button (Mobile Only) */}
@@ -152,10 +162,9 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
             className={`md:hidden border-t ${navbar.borderColor} ${spacing.block.y.md}`}
           >
             <div className={`flex flex-col ${spacing.block.y.md}`}>
-              {/* Toggle Cluster (Mobile): LocaleToggle, ThemeToggle */}
+              {/* Toggle Cluster (Mobile): LocaleToggle */}
               <div className={`flex items-center ${spacing.gap.sm} ${spacing.block.y.sm}`}>
                 <LocaleToggle />
-                <ThemeToggle />
               </div>
 
               {/* Navigation Links (Mobile) */}
@@ -172,7 +181,22 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
 
               {/* CTA Button (Mobile) */}
               <div className={spacing.block.y.sm}>
-                <CTAButton variant="primary" theme={theme} label={labels.cta} onClick={() => setIsOpen(false)} />
+                <CTAButton
+                  variant="ghost"
+                  theme={theme}
+                  label={labels.login}
+                  href="https://qpp.fahrlygo.de/account/login"
+                  onClick={() => setIsOpen(false)}
+                />
+              </div>
+              <div className={spacing.block.y.sm}>
+                <CTAButton
+                  variant="primary"
+                  theme={theme}
+                  label={labels.cta}
+                  href="https://qpp.fahrlygo.de/account/get-signup-link"
+                  onClick={() => setIsOpen(false)}
+                />
               </div>
             </div>
           </div>

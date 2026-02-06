@@ -24,6 +24,7 @@ export type ShellMessages = {
       useCases: string;
       faq: string;
     };
+    login: string;
     cta: string;
     ariaLabels: {
       goToHomepage: string;
@@ -53,6 +54,7 @@ const shellMessages: Record<'en' | 'de', ShellMessages> = {
         useCases: 'Use Cases',
         faq: 'FAQ',
       },
+      login: 'Log in',
       cta: 'Free Trial',
       ariaLabels: {
         goToHomepage: 'Go to homepage',
@@ -80,6 +82,7 @@ const shellMessages: Record<'en' | 'de', ShellMessages> = {
         useCases: 'Anwendungsfälle',
         faq: 'FAQ',
       },
+      login: 'Log in',
       cta: 'Fahrly testen',
       ariaLabels: {
         goToHomepage: 'Zur Startseite',

@@ -163,10 +163,9 @@
           },
           "body": "Daily operations and dispatch",
           "features": [
-            "Dispatch and routing",
-            "Team communication",
-            "Basic reporting",
-            "Email support"
+            "Route planning",
+            "Driver performance analytics",
+            "Email support within 24 hours"
           ],
           "singleUser": {
             "monthly": "€30 / month",
@@ -191,9 +190,9 @@
           "body": "Operations & workforce management",
           "features": [
             "Everything in Core",
-            "Scheduling and availability",
-            "Time and role management",
-            "Operational reporting"
+            "Time tracking",
+            "Payroll calculator",
+            "E-signature"
           ],
           "singleUser": {
             "monthly": "€60 / month",
@@ -204,30 +203,30 @@
         },
         {
           "id": "full",
-          "title": "Full Platform",
+          "title": "Enterprise",
           "billing": {
             "monthly": {
-              "price": "€200 / month",
-              "detail": "Team · monthly billing"
+              "price": "Price on request",
+              "detail": "Phone call required"
             },
             "yearly": {
-              "price": "€160 / month",
-              "subPrice": "(€1,920 / year)",
-              "detail": "Team · annual billing"
+              "price": "Price on request",
+              "subPrice": "",
+              "detail": "Phone call required"
             }
           },
           "body": "Full operations & compliance",
           "features": [
             "Everything in Operations",
-            "Fleet readiness tracking",
-            "Compliance workflows",
-            "Priority onboarding"
+            "Fleet management",
+            "Compliance",
+            "Driver's license checks"
           ],
           "singleUser": {
-            "monthly": "€120 / month",
-            "yearly": "€1,152 / year"
+            "monthly": "On request",
+            "yearly": "On request"
           },
-          "ctaLabel": "Talk to sales"
+          "ctaLabel": "Book a call"
         }
       ]
     },

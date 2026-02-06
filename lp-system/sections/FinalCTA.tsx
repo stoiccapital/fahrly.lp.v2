@@ -33,7 +33,12 @@ export function FinalCTA({ copy, theme }: FinalCTAProps) {
               </p>
             )}
             <CTAGroup align="left" stack="horizontal">
-              <CTAButton variant="primary" theme={theme} label={copy.ctaLabel} />
+              <CTAButton
+                variant="primary"
+                theme={theme}
+                label={copy.ctaLabel}
+                href="https://qpp.fahrlygo.de/account/get-signup-link"
+              />
             </CTAGroup>
           </div>
           <div />

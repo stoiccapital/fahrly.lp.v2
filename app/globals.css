@@ -8,6 +8,7 @@
 
 /* Light mode (default) */
 :root {
+  color-scheme: light;
   --bg-default: #ffffff;
   --bg-neutral: rgb(245 247 250); /* Increased contrast for section separation */
   --bg-neutral-hover: rgb(235 239 245); /* Hover state for neutral backgrounds (more visible) */
@@ -32,10 +33,54 @@
   --link-hover: rgb(18 24 38); /* Primary text color for link hover */
   /* Card hover tokens */
   --card-hover-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow on hover */
+
+  /* Dashboard mock tokens */
+  --dashboard-surface: var(--bg-default);
+  --dashboard-surface-muted: var(--bg-neutral);
+  --dashboard-surface-subtle: var(--bg-neutral-hover);
+  --dashboard-border: var(--border-subtle);
+  --dashboard-border-strong: var(--border-strong);
+  --dashboard-text-muted: var(--text-muted);
+  --dashboard-text-secondary: var(--text-secondary);
+  --dashboard-logo-bg: var(--text-primary);
+  --dashboard-logo-text: var(--bg-default);
+  --dashboard-map-bg: linear-gradient(
+    135deg,
+    var(--bg-neutral) 0%,
+    var(--bg-neutral-hover) 100%
+  );
+  --dashboard-highlight-bg: #ffffff;
+  --dashboard-highlight-text: #000000;
+  --dashboard-icon-inverse: #ffffff;
+  --dashboard-positive: #10b981;
+  --dashboard-dot-red: #ff5f57;
+  --dashboard-dot-yellow: #ffbd2e;
+  --dashboard-dot-green: #28ca42;
+  --dashboard-glow-gradient: linear-gradient(
+    135deg,
+    #11efe3,
+    #667eea,
+    #9966ff,
+    #ff5091
+  );
+  --dashboard-stat-green: linear-gradient(135deg, #10b981, #34d399);
+  --dashboard-stat-purple: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  --dashboard-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03),
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 12px 24px rgba(0, 0, 0, 0.06),
+    0 48px 80px rgba(0, 0, 0, 0.12);
+  --dashboard-shadow-hover: 0 0 0 1px rgba(0, 0, 0, 0.03),
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 16px 32px rgba(0, 0, 0, 0.08),
+    0 56px 100px rgba(0, 0, 0, 0.14);
+  --dashboard-float-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --dashboard-soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --dashboard-map-dot-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
 /* Dark mode */
 .dark {
+  color-scheme: dark;
   --bg-default: #000000;
   --bg-neutral: #0e0e0e;
   --bg-neutral-hover: rgb(15 23 42); /* Hover state for neutral backgrounds (slightly lighter) */
@@ -60,6 +105,17 @@
   --link-hover: rgb(248 250 252); /* Primary text color for link hover */
   /* Card hover tokens */
   --card-hover-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06); /* Subtle shadow on hover */
+
+  /* Dashboard mock tokens (dark mode) */
+  --dashboard-shadow: 0 0 0 1px rgba(148, 163, 184, 0.12),
+    0 8px 24px rgba(15, 23, 42, 0.6);
+  --dashboard-shadow-hover: 0 0 0 1px rgba(148, 163, 184, 0.16),
+    0 12px 32px rgba(15, 23, 42, 0.7);
+  --dashboard-float-shadow: 0 12px 32px rgba(15, 23, 42, 0.6);
+  --dashboard-soft-shadow: 0 6px 16px rgba(15, 23, 42, 0.6);
+  --dashboard-map-dot-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25);
+  --dashboard-highlight-bg: #000000;
+  --dashboard-highlight-text: #ffffff;
 }
 
 html {
@@ -188,4 +244,15 @@ body {
     background-color: var(--bg-default) !important;
     border-color: var(--border-subtle) !important;
   }
+}
+
+/* Dashboard mock highlight text (global rule) */
+.dashboard-mock .dash-mini-kpi.highlight .kpi-label,
+.dashboard-mock .dash-mini-kpi.highlight .kpi-value,
+.dashboard-mock .kpi-trend-highlight {
+  color: var(--dashboard-highlight-text);
+}
+
+.dashboard-mock .kpi-trend-highlight {
+  opacity: 0.8;
 }

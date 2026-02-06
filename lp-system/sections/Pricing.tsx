@@ -21,10 +21,14 @@ export type PricingProps = {
 export function Pricing({ copy, theme }: PricingProps) {
   const [billingMode, setBillingMode] = useState<BillingMode>('monthly');
   const plans: PricingPlanCopy[] = copy.plans && copy.plans.length > 0 ? copy.plans : [];
-  const toggleBaseClass = `inline-flex items-center gap-2 px-4 py-1.5 ${components.button.radius} ${typography.label} font-normal focus:outline-none focus:ring-2 focus:ring-ring-focus focus:ring-offset-2 focus:ring-offset-ring-focus`;
+  const toggleBaseClass = `inline-flex items-center justify-center gap-2 min-w-[200px] ${components.button.primary.base} ${typography.label} font-normal`;
 
   const pricingCards = plans.map((plan, index) => {
     const activeBilling = plan.billing[billingMode];
+    const ctaHref =
+      plan.id === 'full'
+        ? 'https://wa.me/491718411868'
+        : 'https://qpp.fahrlygo.de/account/get-signup-link';
     return (
     <PricingCard
       key={index}
@@ -44,6 +48,7 @@ export function Pricing({ copy, theme }: PricingProps) {
           : copy.singleUserLabels?.monthly
       }
       ctaLabel={plan.ctaLabel}
+      ctaHref={ctaHref}
       theme={theme}
       isHighlighted={plan.isPopular}
     />

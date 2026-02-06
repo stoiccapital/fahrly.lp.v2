@@ -50,7 +50,12 @@ export function HeroAgencyLp({ copy, theme }: HeroAgencyLpProps) {
             )}
             <div className={spacing.block.y.md}>
               <CTAGroup align="left" stack="horizontal">
-                <CTAButton variant="primary" theme={theme} label={copy.primaryCtaLabel} />
+                <CTAButton
+                  variant="primary"
+                  theme={theme}
+                  label={copy.primaryCtaLabel}
+                  href="https://qpp.fahrlygo.de/account/get-signup-link"
+                />
                 {copy.secondaryCtaLabel && (
                   <CTAButton
                     variant="ghost"
