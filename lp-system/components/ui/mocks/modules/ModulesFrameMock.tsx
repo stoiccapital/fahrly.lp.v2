@@ -33,9 +33,10 @@ export function ModulesFrameMock({
       aria-hidden={ariaHidden ? 'true' : undefined}
       className={`
         relative
-        w-[520px]
+        w-full
+        ${components.media.maxWidth.lg}
+        ${components.media.aspectRatios['1:1']}
         p-0
-        h-[520px]
         overflow-hidden
       `}
     >

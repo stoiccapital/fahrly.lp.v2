@@ -21,7 +21,7 @@ export type PricingProps = {
 export function Pricing({ copy, theme }: PricingProps) {
   const [billingMode, setBillingMode] = useState<BillingMode>('monthly');
   const plans: PricingPlanCopy[] = copy.plans && copy.plans.length > 0 ? copy.plans : [];
-  const toggleBaseClass = `inline-flex items-center justify-center gap-2 min-w-[200px] ${components.button.primary.base} ${typography.label} font-normal`;
+  const toggleBaseClass = `inline-flex items-center justify-center gap-2 ${components.button.primary.base} ${typography.label} font-normal`;
 
   const pricingCards = plans.map((plan, index) => {
     const activeBilling = plan.billing[billingMode];
