@@ -4,7 +4,7 @@ import { DEFAULT_THEME } from "../lp-system/config/preferences";
 
 export const metadata: Metadata = {
   title: "Fahrly",
-  description: "Mietwagen Unternehmenssoftware",
+  description: "Mietwagen Verwaltung Software",
 };
 
 export default function RootLayout({
