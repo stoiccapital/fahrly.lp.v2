@@ -3,8 +3,8 @@ import "./globals.css";
 import { DEFAULT_THEME } from "../lp-system/config/preferences";
 
 export const metadata: Metadata = {
-  title: "Landing Page Template",
-  description: "Minimal reusable landing page template",
+  title: "Fahrly",
+  description: "Mietwagen Unternehmenssoftware",
 };
 
 export default function RootLayout({
