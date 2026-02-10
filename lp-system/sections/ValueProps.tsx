@@ -5,7 +5,7 @@ import { SplitGrid } from '../components/layouts/SplitGrid';
 import { FeatureCard } from '../components/ui/FeatureCard';
 import { Icon } from '../components/ui/Icon';
 import { CalendarIcon, SettingsIcon, ChartIcon } from '../components/icons';
-import { ModulesConnectionsMock } from '../components/ui/mocks';
+import { ModulesCirclesMock } from '../components/ui/mocks';
 import { spacing, typography, globalBackground, ColorTheme } from '../config/design-system';
 
 export type ValuePropsProps = {
@@ -84,7 +84,7 @@ export function ValueProps({ copy, theme }: ValuePropsProps) {
             )}
           </div>
           <div className="flex justify-center">
-            <ModulesConnectionsMock />
+            <ModulesCirclesMock ariaHidden={true} />
           </div>
         </SplitGrid>
       </CenteredLayout>

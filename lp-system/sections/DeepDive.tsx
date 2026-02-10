@@ -38,7 +38,7 @@ export function DeepDive({ copy, theme }: DeepDiveProps) {
               <StepItem
                 key={`${step.title}-${index}`}
                 theme={theme}
-                stepLabel={`Step ${index + 1}`}
+                stepLabel=""
                 title={step.title}
                 body={step.body}
               />

@@ -16,7 +16,7 @@ export function AppFrameMock({
     <div
       aria-hidden={ariaHidden ? 'true' : undefined}
       className={`
-        rounded-md
+        rounded-3xl
         border
         border-border-subtle
         ${components.shadow.surface2}

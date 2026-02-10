@@ -36,6 +36,11 @@ export function ModulesFrameMock({
         w-full
         ${components.media.maxWidth.lg}
         ${components.media.aspectRatios['1:1']}
+        rounded-3xl
+        border
+        border-border-subtle
+        bg-bg-surface
+        ${components.shadow.surface1}
         p-0
         overflow-hidden
       `}
